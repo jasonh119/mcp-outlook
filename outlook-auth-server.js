@@ -21,6 +21,7 @@ const AUTH_CONFIG = {
     'offline_access',
     'User.Read',
     'Mail.Read',
+    'Mail.ReadWrite',
     'Mail.Send',
     'Calendars.Read',
     'Calendars.ReadWrite',
@@ -187,7 +188,7 @@ const server = http.createServer((req, res) => {
       state: Date.now().toString() // Simple state parameter for security
     };
     
-    const authUrl = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?${querystring.stringify(authParams)}`;
+    const authUrl = `https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?${querystring.stringify(authParams)}`;
     console.log(`Redirecting to: ${authUrl}`);
     
     // Redirect to Microsoft's login page
@@ -238,7 +239,7 @@ function exchangeCodeForTokens(code) {
     
     const options = {
       hostname: 'login.microsoftonline.com',
-      path: '/common/oauth2/v2.0/token',
+      path: '/consumers/oauth2/v2.0/token',
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',

@@ -32,10 +32,8 @@ async function callGraphAPI(accessToken, method, path, data = null, queryParams 
       console.error(`Using full URL from nextLink: ${finalUrl}`);
     } else {
       // Build URL from path and queryParams
-      // Encode path segments properly
-      const encodedPath = path.split('/')
-        .map(segment => encodeURIComponent(segment))
-        .join('/');
+      // Use path as-is - Graph API message IDs contain characters like = that must not be encoded
+      const encodedPath = path;
       
       // Build query string from parameters with special handling for OData filters
       let queryString = '';
