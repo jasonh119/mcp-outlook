@@ -6,6 +6,7 @@ const handleSearchEmails = require('./search');
 const handleReadEmail = require('./read');
 const handleSendEmail = require('./send');
 const handleMarkAsRead = require('./mark-as-read');
+const handleForwardEmail = require('./forward');
 
 // Email tool definitions
 const emailTools = [
@@ -144,6 +145,29 @@ const emailTools = [
       required: ["id"]
     },
     handler: handleMarkAsRead
+  },
+  {
+    name: "forward-email",
+    description: "Forwards an email to one or more recipients with an optional comment",
+    inputSchema: {
+      type: "object",
+      properties: {
+        id: {
+          type: "string",
+          description: "ID of the email to forward"
+        },
+        to: {
+          type: "string",
+          description: "Comma-separated list of recipient email addresses to forward to"
+        },
+        comment: {
+          type: "string",
+          description: "Optional comment to include with the forwarded email"
+        }
+      },
+      required: ["id", "to"]
+    },
+    handler: handleForwardEmail
   }
 ];
 
@@ -153,5 +177,6 @@ module.exports = {
   handleSearchEmails,
   handleReadEmail,
   handleSendEmail,
-  handleMarkAsRead
+  handleMarkAsRead,
+  handleForwardEmail
 };
