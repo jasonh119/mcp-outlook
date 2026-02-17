@@ -1,35 +1,48 @@
-[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/ryaker-outlook-mcp-badge.png)](https://mseep.ai/app/ryaker-outlook-mcp)
+# Outlook MCP Server
 
-# Modular Outlook MCP Server
+> **Fork Notice:** This project is forked from [ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp) at commit [`5d4f987`](https://github.com/ryaker/outlook-mcp/commit/5d4f987). Full credit to the original author for the foundational implementation.
 
-This is a modular implementation of the Outlook MCP (Model Context Protocol) server that connects Claude with Microsoft Outlook through the Microsoft Graph API.
-Certified by MCPHub https://mcphub.com/mcp-servers/ryaker/outlook-mcp
+A modular MCP (Model Context Protocol) server that connects Claude with Microsoft Outlook through the Microsoft Graph API.
 
 ## Directory Structure
 
 ```
-/modular/
 ├── index.js                 # Main entry point
 ├── config.js                # Configuration settings
+├── outlook-auth-server.js   # Standalone OAuth server
 ├── auth/                    # Authentication modules
 │   ├── index.js             # Authentication exports
+│   ├── oauth-server.js      # OAuth flow handling
 │   ├── token-manager.js     # Token storage and refresh
+│   ├── token-storage.js     # Token persistence
 │   └── tools.js             # Auth-related tools
 ├── calendar/                # Calendar functionality
 │   ├── index.js             # Calendar exports
 │   ├── list.js              # List events
 │   ├── create.js            # Create event
 │   ├── delete.js            # Delete event
-│   ├── cancel.js            # Cancel
+│   ├── cancel.js            # Cancel event
 │   ├── accept.js            # Accept event
 │   ├── tentative.js         # Tentatively accept event
-│   ├── decline.js           # Decline event
+│   └── decline.js           # Decline event
 ├── email/                   # Email functionality
 │   ├── index.js             # Email exports
 │   ├── list.js              # List emails
 │   ├── search.js            # Search emails
 │   ├── read.js              # Read email
-│   └── send.js              # Send email
+│   ├── send.js              # Send email
+│   ├── mark-as-read.js      # Mark email read/unread
+│   └── folder-utils.js      # Folder resolution utilities
+├── folder/                  # Folder management
+│   ├── index.js             # Folder exports
+│   ├── list.js              # List folders
+│   ├── create.js            # Create folder
+│   └── move.js              # Move emails between folders
+├── rules/                   # Inbox rules management
+│   ├── index.js             # Rules exports
+│   ├── list.js              # List rules
+│   ├── create.js            # Create rule
+│   └── edit-sequence.js     # Edit rule execution order
 └── utils/                   # Utility functions
     ├── graph-api.js         # Microsoft Graph API helper
     ├── odata-helpers.js     # OData query building
@@ -39,8 +52,10 @@ Certified by MCPHub https://mcphub.com/mcp-servers/ryaker/outlook-mcp
 ## Features
 
 - **Authentication**: OAuth 2.0 authentication with Microsoft Graph API
-- **Email Management**: List, search, read, and send emails
-- **Calendar Management**: List, create, accept, decline, and delete calendar events
+- **Email Management**: List, search, read, send, and mark emails as read/unread
+- **Calendar Management**: List, create, accept, tentatively accept, decline, cancel, and delete calendar events
+- **Folder Management**: List, create folders, and move emails between folders
+- **Inbox Rules**: List, create, and reorder inbox rules
 - **Modular Structure**: Clean separation of concerns for better maintainability
 - **OData Filter Handling**: Proper escaping and formatting of OData queries
 - **Test Mode**: Simulated responses for testing without real API calls
