@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Context
+
+Forked from [ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp) at commit `5d4f987`. Hosted at [jasonh119/mcp-outlook](https://github.com/jasonh119/mcp-outlook).
+
+### Git Remotes
+- `origin` — upstream (ryaker/outlook-mcp)
+- `jasonh119` — fork (jasonh119/mcp-outlook) — **push here**
+
 ## Development Commands
 
 - `npm install` - **ALWAYS run first** to install dependencies 
@@ -76,3 +84,23 @@ The Graph API client properly handles OData filters with URI encoding. Filters a
 - Graph API errors include status codes and response details
 - Token expiration triggers re-authentication flow
 - Empty API responses are handled gracefully (returns '{}' if empty)
+
+## Adding New Tools
+
+Follow the existing module pattern:
+1. Create handler file in the appropriate module directory (e.g., `email/forward.js`)
+2. Export a single async handler function that takes `args` and returns `{ content: [{ type: "text", text: "..." }] }`
+3. Register the tool in the module's `index.js` with name, description, inputSchema, and handler
+4. The main `index.js` automatically picks up tools from module exports
+
+### Graph API Patterns
+- Use `callGraphAPI(accessToken, method, endpoint, body)` from `utils/graph-api.js`
+- Use `callGraphAPIPaginated()` for endpoints returning collections
+- Always call `ensureAuthenticated()` from `auth/` to get the access token
+- Handle the `'Authentication required'` error message for unauthenticated states
+
+### Microsoft Graph API Email Endpoints
+- Send: `POST me/sendMail`
+- Forward: `POST me/messages/{id}/forward`
+- Reply: `POST me/messages/{id}/reply`
+- Reply All: `POST me/messages/{id}/replyAll`
