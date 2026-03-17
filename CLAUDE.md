@@ -22,6 +22,47 @@ Forked from [ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp) at commi
 - `./test-direct.sh` - Direct testing script
 - `npx kill-port 3333` - Kill process using port 3333 if auth server won't start
 
+## Auto-Start Configuration (macOS launchd)
+
+The auth server can be automatically started when your Mac boots using launchd (native macOS service manager).
+
+### Setup
+Two files are already configured:
+- `./start-server.sh` - Wrapper script to start the auth server
+- `~/Library/LaunchAgents/com.jasonhelbig.outlook-auth-server.plist` - launchd configuration
+
+The service is already loaded and will start automatically on boot.
+
+### Management Commands
+
+```bash
+# Stop the service
+launchctl stop com.jasonhelbig.outlook-auth-server
+
+# Start the service
+launchctl start com.jasonhelbig.outlook-auth-server
+
+# Restart the service
+launchctl stop com.jasonhelbig.outlook-auth-server && launchctl start com.jasonhelbig.outlook-auth-server
+
+# View logs
+tail -f /tmp/outlook-auth-server.log
+
+# Check status
+launchctl list | grep outlook
+
+# Unload service (if removing)
+launchctl unload ~/Library/LaunchAgents/com.jasonhelbig.outlook-auth-server.plist
+```
+
+### How It Works
+- Service starts automatically on Mac boot
+- If the process crashes, launchd automatically restarts it
+- Logs go to `/tmp/outlook-auth-server.log` and `/tmp/outlook-auth-server-error.log`
+- No manual intervention needed—just works in the background
+
+---
+
 ## Architecture Overview
 
 This is a modular MCP (Model Context Protocol) server that provides Claude with access to Microsoft Outlook via the Microsoft Graph API. The architecture is organized into functional modules:
