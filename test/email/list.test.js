@@ -1,7 +1,7 @@
 const handleListEmails = require('../../email/list');
-const { callGraphAPI } = require('../../utils/graph-api');
+const { callGraphAPIPaginated } = require('../../utils/graph-api');
 const { ensureAuthenticated } = require('../../auth');
-const { resolveFolderPath, WELL_KNOWN_FOLDERS } = require('../../email/folder-utils');
+const { resolveFolderPath } = require('../../email/folder-utils');
 
 jest.mock('../../utils/graph-api');
 jest.mock('../../auth');
@@ -37,7 +37,7 @@ describe('handleListEmails', () => {
   ];
 
   beforeEach(() => {
-    callGraphAPI.mockClear();
+    callGraphAPIPaginated.mockClear();
     ensureAuthenticated.mockClear();
     resolveFolderPath.mockClear();
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -50,22 +50,22 @@ describe('handleListEmails', () => {
   describe('successful email retrieval', () => {
     test('should list emails from inbox by default', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: mockEmails });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: mockEmails });
 
       const result = await handleListEmails({});
 
       expect(ensureAuthenticated).toHaveBeenCalledTimes(1);
       expect(resolveFolderPath).toHaveBeenCalledWith(mockAccessToken, 'inbox');
-      expect(callGraphAPI).toHaveBeenCalledWith(
+      expect(callGraphAPIPaginated).toHaveBeenCalledWith(
         mockAccessToken,
         'GET',
-        WELL_KNOWN_FOLDERS['inbox'],
-        null,
+        'me/mailFolders/inbox/messages',
         expect.objectContaining({
           $top: 10,
           $orderby: 'receivedDateTime desc'
-        })
+        }),
+        10
       );
       expect(result.content[0].text).toContain('Found 2 emails in inbox');
       expect(result.content[0].text).toContain('Test Email 1');
@@ -75,44 +75,44 @@ describe('handleListEmails', () => {
     test('should list emails from specified folder', async () => {
       const customFolder = 'drafts';
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['drafts']);
-      callGraphAPI.mockResolvedValue({ value: mockEmails });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/drafts/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: mockEmails });
 
       const result = await handleListEmails({ folder: customFolder });
 
       expect(resolveFolderPath).toHaveBeenCalledWith(mockAccessToken, customFolder);
-      expect(callGraphAPI).toHaveBeenCalledWith(
+      expect(callGraphAPIPaginated).toHaveBeenCalledWith(
         mockAccessToken,
         'GET',
-        WELL_KNOWN_FOLDERS['drafts'],
-        null,
-        expect.any(Object)
+        'me/mailFolders/drafts/messages',
+        expect.any(Object),
+        10
       );
       expect(result.content[0].text).toContain('Found 2 emails in drafts');
     });
 
     test('should respect custom count parameter', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: [mockEmails[0]] });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: [mockEmails[0]] });
 
       await handleListEmails({ count: 5 });
 
-      expect(callGraphAPI).toHaveBeenCalledWith(
+      expect(callGraphAPIPaginated).toHaveBeenCalledWith(
         mockAccessToken,
         'GET',
-        WELL_KNOWN_FOLDERS['inbox'],
-        null,
+        'me/mailFolders/inbox/messages',
         expect.objectContaining({
           $top: 5
-        })
+        }),
+        5
       );
     });
 
     test('should format email list correctly with sender info', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: mockEmails });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: mockEmails });
 
       const result = await handleListEmails({});
 
@@ -131,8 +131,8 @@ describe('handleListEmails', () => {
       };
 
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: [emailWithoutSender] });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: [emailWithoutSender] });
 
       const result = await handleListEmails({});
 
@@ -143,8 +143,8 @@ describe('handleListEmails', () => {
   describe('empty results', () => {
     test('should return appropriate message when no emails found', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: [] });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: [] });
 
       const result = await handleListEmails({});
 
@@ -153,8 +153,8 @@ describe('handleListEmails', () => {
 
     test('should return appropriate message when folder has no emails', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['archive']);
-      callGraphAPI.mockResolvedValue({ value: [] });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/archive/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: [] });
 
       const result = await handleListEmails({ folder: 'archive' });
 
@@ -171,13 +171,13 @@ describe('handleListEmails', () => {
       expect(result.content[0].text).toBe(
         "Authentication required. Please use the 'authenticate' tool first."
       );
-      expect(callGraphAPI).not.toHaveBeenCalled();
+      expect(callGraphAPIPaginated).not.toHaveBeenCalled();
     });
 
     test('should handle Graph API error', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockRejectedValue(new Error('Graph API Error'));
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockRejectedValue(new Error('Graph API Error'));
 
       const result = await handleListEmails({});
 
@@ -197,18 +197,18 @@ describe('handleListEmails', () => {
   describe('inbox endpoint verification', () => {
     test('should use me/mailFolders/inbox/messages for inbox folder', async () => {
       ensureAuthenticated.mockResolvedValue(mockAccessToken);
-      resolveFolderPath.mockResolvedValue(WELL_KNOWN_FOLDERS['inbox']);
-      callGraphAPI.mockResolvedValue({ value: mockEmails });
+      resolveFolderPath.mockResolvedValue('me/mailFolders/inbox/messages');
+      callGraphAPIPaginated.mockResolvedValue({ value: mockEmails });
 
       await handleListEmails({ folder: 'inbox' });
 
       expect(resolveFolderPath).toHaveBeenCalledWith(mockAccessToken, 'inbox');
-      expect(callGraphAPI).toHaveBeenCalledWith(
+      expect(callGraphAPIPaginated).toHaveBeenCalledWith(
         mockAccessToken,
         'GET',
         'me/mailFolders/inbox/messages',
-        null,
-        expect.any(Object)
+        expect.any(Object),
+        10
       );
     });
   });

@@ -154,4 +154,78 @@ describe('handleCreateEvent', () => {
     expect(result.content[0].text).toBe("Error creating event: Graph API Error");
   });
 
+  test('should map attendees array to Graph API format', async () => {
+    ensureAuthenticated.mockResolvedValue('dummy_access_token');
+    callGraphAPI.mockResolvedValue({ id: 'event-1' });
+
+    await handleCreateEvent({
+      subject: 'Team Meeting',
+      start: '2024-03-10T10:00:00',
+      end: '2024-03-10T11:00:00',
+      attendees: ['alice@example.com', 'bob@example.com']
+    });
+
+    const bodyContent = callGraphAPI.mock.calls[0][3];
+    expect(bodyContent.attendees).toEqual([
+      { emailAddress: { address: 'alice@example.com' }, type: 'required' },
+      { emailAddress: { address: 'bob@example.com' }, type: 'required' }
+    ]);
+  });
+
+  test('should send body as HTML contentType', async () => {
+    ensureAuthenticated.mockResolvedValue('dummy_access_token');
+    callGraphAPI.mockResolvedValue({ id: 'event-1' });
+
+    await handleCreateEvent({
+      subject: 'Event with Body',
+      start: '2024-03-10T10:00:00',
+      end: '2024-03-10T11:00:00',
+      body: '<p>Agenda here</p>'
+    });
+
+    const bodyContent = callGraphAPI.mock.calls[0][3];
+    expect(bodyContent.body).toEqual({ contentType: 'HTML', content: '<p>Agenda here</p>' });
+  });
+
+  test('should send empty string body content when body is omitted', async () => {
+    ensureAuthenticated.mockResolvedValue('dummy_access_token');
+    callGraphAPI.mockResolvedValue({ id: 'event-1' });
+
+    await handleCreateEvent({
+      subject: 'No Body Event',
+      start: '2024-03-10T10:00:00',
+      end: '2024-03-10T11:00:00'
+    });
+
+    const bodyContent = callGraphAPI.mock.calls[0][3];
+    expect(bodyContent.body).toEqual({ contentType: 'HTML', content: '' });
+  });
+
+  test('should use me/events endpoint', async () => {
+    ensureAuthenticated.mockResolvedValue('dummy_access_token');
+    callGraphAPI.mockResolvedValue({ id: 'event-1' });
+
+    await handleCreateEvent({
+      subject: 'Endpoint Test',
+      start: '2024-03-10T10:00:00',
+      end: '2024-03-10T11:00:00'
+    });
+
+    const endpoint = callGraphAPI.mock.calls[0][2];
+    expect(endpoint).toBe('me/events');
+  });
+
+  test('should include subject in success response message', async () => {
+    ensureAuthenticated.mockResolvedValue('dummy_access_token');
+    callGraphAPI.mockResolvedValue({ id: 'event-1' });
+
+    const result = await handleCreateEvent({
+      subject: 'My Important Event',
+      start: '2024-03-10T10:00:00',
+      end: '2024-03-10T11:00:00'
+    });
+
+    expect(result.content[0].text).toContain('My Important Event');
+  });
+
 });

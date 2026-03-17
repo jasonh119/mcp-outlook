@@ -3,6 +3,8 @@
  */
 const handleListRules = require('./list');
 const handleCreateRule = require('./create');
+const { callGraphAPI } = require('../utils/graph-api');
+const { ensureAuthenticated } = require('../auth');
 
 // Import getInboxRules for the edit sequence tool
 const { getInboxRules } = require('./list');
