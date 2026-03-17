@@ -7,6 +7,7 @@ const handleReadEmail = require('./read');
 const handleSendEmail = require('./send');
 const handleMarkAsRead = require('./mark-as-read');
 const handleForwardEmail = require('./forward');
+const handleDeleteEmail = require('./delete');
 
 // Email tool definitions
 const emailTools = [
@@ -168,6 +169,21 @@ const emailTools = [
       required: ["id", "to"]
     },
     handler: handleForwardEmail
+  },
+  {
+    name: "delete-email",
+    description: "Deletes an email by moving it to Deleted Items",
+    inputSchema: {
+      type: "object",
+      properties: {
+        id: {
+          type: "string",
+          description: "ID of the email to delete"
+        }
+      },
+      required: ["id"]
+    },
+    handler: handleDeleteEmail
   }
 ];
 
@@ -178,5 +194,6 @@ module.exports = {
   handleReadEmail,
   handleSendEmail,
   handleMarkAsRead,
-  handleForwardEmail
+  handleForwardEmail,
+  handleDeleteEmail
 };
