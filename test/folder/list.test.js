@@ -17,8 +17,11 @@ describe('handleListFolders', () => {
   describe('successful listing', () => {
     test('should list folders as flat list by default', async () => {
       ensureAuthenticated.mockResolvedValue(MOCK_ACCESS_TOKEN);
+      // custom has childFolderCount 0 here so the handler makes a single top-level
+      // request and does not fetch child folders (a persistent mock would otherwise
+      // return this same array for the child query and duplicate every folder).
       callGraphAPI.mockResolvedValue({
-        value: [mockFolders.inbox, mockFolders.drafts, mockFolders.custom]
+        value: [mockFolders.inbox, mockFolders.drafts, { ...mockFolders.custom, childFolderCount: 0 }]
       });
 
       const result = await handleListFolders({});

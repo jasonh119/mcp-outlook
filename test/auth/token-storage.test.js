@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const https = require('https');
 const path = require('path');
+const querystring = require('querystring');
 const TokenStorage = require('../../auth/token-storage');
 
 jest.mock('fs', () => ({
@@ -21,6 +22,7 @@ const baseConfig = {
   redirectUri: 'http://localhost/callback',
   scopes: ['test_scope'],
   tokenEndpoint: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+  refreshTokenBuffer: 5 * 60 * 1000,
 };
 
 describe('TokenStorage', () => {
@@ -29,6 +31,10 @@ describe('TokenStorage', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    // clearAllMocks() resets call history but NOT implementations, so a persistent
+    // fs.writeFile.mockRejectedValue() set by one test would otherwise leak into later
+    // tests. Reset it to a benign resolve so each test starts from a clean save path.
+    fs.writeFile.mockResolvedValue();
     tokenStorage = new TokenStorage(baseConfig);
     // Ensure tokens are null at the start of each test that doesn't mock readFile
     tokenStorage.tokens = null;
@@ -419,7 +425,11 @@ describe('TokenStorage', () => {
         const promise1 = tokenStorage.refreshAccessToken();
         const promise2 = tokenStorage.refreshAccessToken();
 
-        expect(promise1).toBe(promise2); // Should be the same promise object
+        // refreshAccessToken is async, so each call returns a distinct wrapper promise;
+        // the concurrency contract is that both share a single in-flight refresh. That is
+        // asserted below via https.request being called only once and both resolving to
+        // the same token. Here we just confirm the in-flight promise was cached.
+        expect(tokenStorage._refreshPromise).not.toBeNull();
 
         // Simulate successful response for the single underlying HTTP request
         const mockRes = {

@@ -195,9 +195,18 @@ describe('OAuth Server Routes', () => {
         expect(config.clientId).toBe('');
         expect(config.clientSecret).toBe('');
         expect(config.redirectUri).toBe('http://localhost:3333/auth/callback');
-        expect(config.scopes).toEqual(['offline_access', 'User.Read', 'Mail.Read']);
-        expect(config.tokenEndpoint).toBe('https://login.microsoftonline.com/common/oauth2/v2.0/token');
-        expect(config.authEndpoint).toBe('https://login.microsoftonline.com/common/oauth2/v2.0/authorize');
+        expect(config.scopes).toEqual([
+            'offline_access',
+            'User.Read',
+            'Mail.Read',
+            'Mail.ReadWrite',
+            'Mail.Send',
+            'Calendars.Read',
+            'Calendars.ReadWrite',
+            'Contacts.Read'
+        ]);
+        expect(config.tokenEndpoint).toBe('https://login.microsoftonline.com/consumers/oauth2/v2.0/token');
+        expect(config.authEndpoint).toBe('https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize');
     });
 
     it('should use environment variables with specified prefix', () => {
