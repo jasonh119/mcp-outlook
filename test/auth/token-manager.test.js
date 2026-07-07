@@ -94,7 +94,8 @@ describe('saveTokenCache', () => {
     expect(result).toBe(true);
     expect(fs.writeFileSync).toHaveBeenCalledWith(
       TOKEN_PATH,
-      JSON.stringify(tokens, null, 2)
+      JSON.stringify(tokens, null, 2),
+      { mode: 0o600 }
     );
   });
 

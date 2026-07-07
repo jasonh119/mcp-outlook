@@ -35,6 +35,9 @@ yarn.lock
 .DS_Store
 Thumbs.db
 
+# Accidentally committed config folder
+~/
+
 # Logs
 logs
 *.log
