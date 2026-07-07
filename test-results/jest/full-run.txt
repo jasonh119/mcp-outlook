@@ -1,0 +1,1114 @@
+
+> outlook-mcp@1.0.0 test
+> jest
+
+PASS test/email/list.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/list.js:6:33)
+      at Object.require (test/email/list.test.js:1:26)
+
+PASS test/utils/html-sanitizer.test.js
+PASS test/email/search.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/search.js:6:33)
+      at Object.require (test/email/search.test.js:1:28)
+
+PASS test/utils/graph-api.test.js
+PASS test/auth/token-manager.test.js
+PASS test/folder/list.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (folder/list.js:5:33)
+      at Object.require (test/folder/list.test.js:1:27)
+
+PASS test/folder/move.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (folder/move.js:5:33)
+      at Object.require (test/folder/move.test.js:1:26)
+
+PASS test/calendar/list.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/list.js:6:33)
+      at Object.require (test/calendar/list.test.js:1:26)
+
+PASS test/rules/create.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (rules/create.js:5:33)
+      at Object.require (test/rules/create.test.js:1:26)
+
+PASS test/email/send.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/send.js:6:33)
+      at Object.require (test/email/send.test.js:1:25)
+
+PASS test/calendar/create.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/create.js:5:33)
+      at Object.require (test/calendar/create.test.js:1:27)
+
+PASS test/calendar/decline.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/decline.js:5:33)
+      at Object.require (test/calendar/decline.test.js:1:28)
+
+PASS test/auth/token-storage.test.js
+  ● Console
+
+    console.log
+      Tokens loaded from file.
+
+      at TokenStorage.log [as _loadTokensFromFile] (auth/token-storage.js:35:15)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log [as _saveTokensToFile] (auth/token-storage.js:55:15)
+
+    console.error
+      Error saving token cache: Error: Disk full
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:111:26)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+      56 |       // return true; // No longer returning boolean, will throw on error.
+      57 |     } catch (error) {
+    > 58 |       console.error('Error saving token cache:', error);
+         |               ^
+      59 |       throw error; // Propagate the error
+      60 |     }
+      61 |   }
+
+      at TokenStorage.error [as _saveTokensToFile] (auth/token-storage.js:58:15)
+      at Object.<anonymous> (test/auth/token-storage.test.js:113:7)
+
+    console.log
+      Tokens loaded from file.
+
+      at TokenStorage.log [as _loadTokensFromFile] (auth/token-storage.js:35:15)
+
+    console.log
+      Tokens loaded from file.
+
+      at TokenStorage.log [as _loadTokensFromFile] (auth/token-storage.js:35:15)
+
+    console.log
+      Exchanging authorization code for tokens...
+
+      at TokenStorage.log [as exchangeCodeForTokens] (auth/token-storage.js:200:13)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log (auth/token-storage.js:55:15)
+
+    console.log
+      Tokens exchanged and saved successfully.
+
+      at log (auth/token-storage.js:236:25)
+
+    console.log
+      Exchanging authorization code for tokens...
+
+      at TokenStorage.log [as exchangeCodeForTokens] (auth/token-storage.js:200:13)
+
+    console.error
+      Failed to save exchanged tokens: Error: Disk space full
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:249:25)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+      237 |                 resolve(this.tokens);
+      238 |               } catch (saveError) {
+    > 239 |                 console.error('Failed to save exchanged tokens:', saveError);
+          |                         ^
+      240 |                 // Similar to refresh, tokens are in memory but not persisted.
+      241 |                 // Rejecting to indicate the operation wasn't fully successful.
+      242 |                 reject(new Error(`Tokens exchanged but failed to save: ${saveError.message}`));
+
+      at error (auth/token-storage.js:239:25)
+
+    console.log
+      Exchanging authorization code for tokens...
+
+      at TokenStorage.log [as exchangeCodeForTokens] (auth/token-storage.js:200:13)
+
+    console.error
+      Error exchanging code for tokens: { error: 'invalid_grant', error_description: 'Bad auth code' }
+
+      243 |               }
+      244 |             } else {
+    > 245 |               console.error('Error exchanging code for tokens:', responseBody);
+          |                       ^
+      246 |               reject(new Error(responseBody.error_description || `Token exchange failed with status ${res.statusCode}`));
+      247 |             }
+      248 |           } catch (e) { // Catch any error during parsing or saving
+
+      at error (auth/token-storage.js:245:23)
+      at Object.cb (test/auth/token-storage.test.js:275:38)
+      at Object.on [as callback] (auth/token-storage.js:222:13)
+      at Object.callback (test/auth/token-storage.test.js:278:26)
+
+    console.log
+      Exchanging authorization code for tokens...
+
+      at TokenStorage.log [as exchangeCodeForTokens] (auth/token-storage.js:200:13)
+
+    console.error
+      HTTP error during code exchange: Error: Network fail
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:284:30)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+      253 |       });
+      254 |       req.on('error', (error) => {
+    > 255 |         console.error('HTTP error during code exchange:', error);
+          |                 ^
+      256 |         reject(error);
+      257 |       });
+      258 |       req.write(postData);
+
+      at Object.error [as errorHandler] (auth/token-storage.js:255:17)
+      at Object.errorHandler (test/auth/token-storage.test.js:288:26)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log (auth/token-storage.js:55:15)
+
+    console.log
+      Access token refreshed and saved successfully.
+
+      at log (auth/token-storage.js:161:37)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.error
+      Failed to save refreshed tokens: Error: Failed to save disk
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:354:27)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+      162 |                             resolve(this.tokens);
+      163 |                         } catch (saveError) {
+    > 164 |                             console.error('Failed to save refreshed tokens:', saveError);
+          |                                     ^
+      165 |                             // Even if save fails, tokens are updated in memory.
+      166 |                             // Depending on desired strictness, could reject here.
+      167 |                             // For now, resolve with in-memory tokens but log critical error.
+
+      at error (auth/token-storage.js:164:37)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log [as _saveTokensToFile] (auth/token-storage.js:55:15)
+
+    console.log
+      Access token refreshed and saved successfully.
+
+      at log (auth/token-storage.js:161:37)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log [as _saveTokensToFile] (auth/token-storage.js:55:15)
+
+    console.log
+      Access token refreshed and saved successfully.
+
+      at log (auth/token-storage.js:161:37)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.error
+      Error refreshing token: { error: 'invalid_grant', error_description: 'Refresh token expired' }
+
+      170 |                         }
+      171 |                     } else {
+    > 172 |                         console.error('Error refreshing token:', responseBody);
+          |                                 ^
+      173 |                         reject(new Error(responseBody.error_description || `Token refresh failed with status ${res.statusCode}`));
+      174 |                     }
+      175 |                 } catch (e) { // Catch any error during parsing or saving
+
+      at error (auth/token-storage.js:172:33)
+      at Object.cb (test/auth/token-storage.test.js:409:38)
+      at Object.on [as callback] (auth/token-storage.js:148:17)
+      at Object.callback (test/auth/token-storage.test.js:412:26)
+
+    console.log
+      Attempting to refresh access token...
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:127:13)
+
+    console.log
+      Refresh already in progress, returning existing promise.
+
+      at TokenStorage.log [as refreshAccessToken] (auth/token-storage.js:123:17)
+
+    console.log
+      Tokens saved successfully.
+
+      at TokenStorage.log [as _saveTokensToFile] (auth/token-storage.js:55:15)
+
+    console.log
+      Access token refreshed and saved successfully.
+
+      at log (auth/token-storage.js:161:37)
+
+    console.log
+      Access token expired or nearing expiration. Attempting refresh.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:96:15)
+
+    console.log
+      Access token expired or nearing expiration. Attempting refresh.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:96:15)
+
+    console.error
+      Failed to refresh access token: Error: Refresh failed
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:484:74)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+       99 |           return await this.refreshAccessToken();
+      100 |         } catch (refreshError) {
+    > 101 |           console.error('Failed to refresh access token:', refreshError);
+          |                   ^
+      102 |           this.tokens = null; // Invalidate tokens on refresh failure
+      103 |           await this._saveTokensToFile(); // Persist invalidation
+      104 |           return null;
+
+      at TokenStorage.error [as getValidAccessToken] (auth/token-storage.js:101:19)
+      at Object.<anonymous> (test/auth/token-storage.test.js:487:23)
+
+    console.warn
+      No tokens to save.
+
+      48 |   async _saveTokensToFile() {
+      49 |     if (!this.tokens) {
+    > 50 |       console.warn('No tokens to save.');
+         |               ^
+      51 |       return false;
+      52 |     }
+      53 |     try {
+
+      at TokenStorage.warn (auth/token-storage.js:50:15)
+      at TokenStorage._saveTokensToFile [as getValidAccessToken] (auth/token-storage.js:103:22)
+      at Object.<anonymous> (test/auth/token-storage.test.js:487:23)
+
+    console.log
+      Access token expired or nearing expiration. Attempting refresh.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:96:15)
+
+    console.error
+      Failed to refresh access token: Error: Refresh API down
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/token-storage.test.js:495:74)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+       99 |           return await this.refreshAccessToken();
+      100 |         } catch (refreshError) {
+    > 101 |           console.error('Failed to refresh access token:', refreshError);
+          |                   ^
+      102 |           this.tokens = null; // Invalidate tokens on refresh failure
+      103 |           await this._saveTokensToFile(); // Persist invalidation
+      104 |           return null;
+
+      at TokenStorage.error [as getValidAccessToken] (auth/token-storage.js:101:19)
+      at Object.<anonymous> (test/auth/token-storage.test.js:499:9)
+
+    console.log
+      Access token expired or nearing expiration. Attempting refresh.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:96:15)
+
+    console.log
+      Access token expired or nearing expiration. Attempting refresh.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:96:15)
+
+    console.warn
+      No refresh token available. Cannot refresh access token.
+
+      105 |         }
+      106 |       } else {
+    > 107 |         console.warn('No refresh token available. Cannot refresh access token.');
+          |                 ^
+      108 |         this.tokens = null; // Invalidate tokens as they are expired and cannot be refreshed
+      109 |         await this._saveTokensToFile(); // Persist invalidation
+      110 |         return null;
+
+      at TokenStorage.warn [as getValidAccessToken] (auth/token-storage.js:107:17)
+      at Object.<anonymous> (test/auth/token-storage.test.js:525:9)
+
+    console.log
+      No access token available.
+
+      at TokenStorage.log [as getValidAccessToken] (auth/token-storage.js:91:15)
+
+    console.log
+      Token file deleted successfully.
+
+      at TokenStorage.log [as clearTokens] (auth/token-storage.js:268:15)
+
+PASS test/rules/list.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (rules/list.js:5:33)
+      at Object.require (test/rules/list.test.js:1:29)
+
+PASS test/email/forward.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/forward.js:5:33)
+      at Object.require (test/email/forward.test.js:1:28)
+
+PASS test/email/folder-utils.test.js
+PASS test/email/read.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/read.js:9:33)
+      at Object.require (test/email/read.test.js:1:25)
+
+PASS test/calendar/delete.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/delete.js:5:33)
+      at Object.require (test/calendar/delete.test.js:1:27)
+
+PASS test/rules/edit-sequence.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (test/rules/edit-sequence.test.js:5:33)
+
+PASS test/auth/tools.test.js
+PASS test/email/mark-as-read.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/mark-as-read.js:6:33)
+      at Object.require (test/email/mark-as-read.test.js:1:26)
+
+PASS test/calendar/cancel.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/cancel.js:5:33)
+      at Object.require (test/calendar/cancel.test.js:1:27)
+
+PASS test/sse-server.test.js
+  ● Console
+
+    console.warn
+      sse-server.test.js: Using a DUMMY app for SSE tests. sse-server.js needs to be refactored for proper testing.
+
+      59 |         // In a real scenario, you'd get this from sse-server.js
+      60 |         if (!sseApp) { // Create a dummy app if not loaded (which it won't be)
+    > 61 |              console.warn("sse-server.test.js: Using a DUMMY app for SSE tests. sse-server.js needs to be refactored for proper testing.");
+         |                      ^
+      62 |              try {
+      63 |                  const {app: tempApp} = require('../sse-server'); // try to load it
+      64 |                  sseApp = tempApp;
+
+      at warn (test/sse-server.test.js:61:22)
+      at Object.isolateModules (test/sse-server.test.js:32:10)
+
+    console.error
+      sse-server.test.js: Could not start test server. sseApp is not valid.
+
+      77 |         // If sseApp is not available or not an Express app, skip starting server.
+      78 |         // This indicates sse-server.js is not structured for easy testing.
+    > 79 |         console.error("sse-server.test.js: Could not start test server. sseApp is not valid.");
+         |                 ^
+      80 |         done(); // Call done to prevent timeout, though tests will likely fail.
+      81 |     }
+      82 | };
+
+      at Object.error (test/sse-server.test.js:79:17)
+
+    console.warn
+      Skipping test for /: server not running
+
+      110 |         it('should return server information', async () => {
+      111 |             if (!sseApp || !server || !server.listening) {
+    > 112 |                 console.warn("Skipping test for /: server not running");
+          |                         ^
+      113 |                 return;
+      114 |             }
+      115 |             const response = await request(server).get('/');
+
+      at Object.warn (test/sse-server.test.js:112:25)
+
+    console.warn
+      Skipping test for /auth: server not running
+
+      128 |         it('should have OAuth routes available (mocked handling)', async () => {
+      129 |             if (!sseApp || !server || !server.listening) {
+    > 130 |                 console.warn("Skipping test for /auth: server not running");
+          |                         ^
+      131 |                 return;
+      132 |             }
+      133 |             // This doesn't test the *functionality* of /auth here, just its presence.
+
+      at Object.warn (test/sse-server.test.js:130:25)
+
+    console.warn
+      Skipping test for /mcp auth: server not running
+
+      153 |         it('should require authentication', async () => {
+      154 |             if (!sseApp || !server || !server.listening) {
+    > 155 |                 console.warn("Skipping test for /mcp auth: server not running");
+          |                         ^
+      156 |                 return;
+      157 |             }
+      158 |             mockTokenStorageInstance.getValidAccessToken.mockResolvedValue(null); // Simulate no valid token
+
+      at Object.warn (test/sse-server.test.js:155:25)
+
+    console.warn
+      Skipping test for /mcp bad request: server not running
+
+      164 |         it('should respond with 400 for bad MCP request if authenticated', async () => {
+      165 |             if (!sseApp || !server || !server.listening) {
+    > 166 |                 console.warn("Skipping test for /mcp bad request: server not running");
+          |                         ^
+      167 |                 return;
+      168 |             }
+      169 |             mockTokenStorageInstance.getValidAccessToken.mockResolvedValue('fake_access_token');
+
+      at Object.warn (test/sse-server.test.js:166:25)
+
+    console.warn
+      Skipping test for /sse auth: server not running
+
+      188 |         it('should require authentication for /sse', async () => {
+      189 |             if (!sseApp || !server || !server.listening) {
+    > 190 |                 console.warn("Skipping test for /sse auth: server not running");
+          |                         ^
+      191 |                 return;
+      192 |             }
+      193 |             mockTokenStorageInstance.getValidAccessToken.mockResolvedValue(null);
+
+      at Object.warn (test/sse-server.test.js:190:25)
+
+    console.warn
+      Skipping test for /messages auth: server not running
+
+      201 |         it('should require authentication for /messages', async () => {
+      202 |              if (!sseApp || !server || !server.listening) {
+    > 203 |                 console.warn("Skipping test for /messages auth: server not running");
+          |                         ^
+      204 |                 return;
+      205 |             }
+      206 |             mockTokenStorageInstance.getValidAccessToken.mockResolvedValue(null);
+
+      at Object.warn (test/sse-server.test.js:203:25)
+
+PASS test/email/delete.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (email/delete.js:5:33)
+      at Object.require (test/email/delete.test.js:1:27)
+
+PASS test/calendar/accept.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (calendar/accept.js:5:33)
+      at Object.require (test/calendar/accept.test.js:1:27)
+
+PASS test/folder/create.test.js
+  ● Console
+
+    console.warn
+      TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.
+
+      25 |
+      26 |     if (!this.config.clientId || !this.config.clientSecret) {
+    > 27 |       console.warn("TokenStorage: Client ID or Secret is not configured (checked MS_CLIENT_ID/OUTLOOK_CLIENT_ID). Token refresh will fail.");
+         |               ^
+      28 |     }
+      29 |   }
+      30 |
+
+      at new warn (auth/token-storage.js:27:15)
+      at Object.<anonymous> (auth/index.js:9:22)
+      at Object.require (folder/create.js:5:33)
+      at Object.require (test/folder/create.test.js:1:28)
+
+PASS test/utils/odata-helpers.test.js
+PASS test/auth/oauth-server.test.js
+  ● Console
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:58:7)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Token exchange error: Error: Token exchange process failed
+          at Object.<anonymous> (/Users/jasonhelbig/mcp-servers/outlook-mcp/test/auth/oauth-server.test.js:133:29)
+          at Promise.then.completed (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/utils.js:231:10)
+          at _callCircusTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:105:5)
+          at _runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:252:3)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:126:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at _runTestsForDescribeBlock (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:121:9)
+          at run (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/run.js:71:3)
+          at runAndTransformResultsToJestFormat (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+          at jestAdapter (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+          at runTestInternal (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:367:16)
+          at runTest (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/runTest.js:444:34)
+          at Object.worker (/Users/jasonhelbig/mcp-servers/outlook-mcp/node_modules/jest-runner/build/testWorker.js:106:12)
+
+      150 |       res.send(templates.authSuccess);
+      151 |     } catch (exchangeError) {
+    > 152 |       console.error('Token exchange error:', exchangeError);
+          |               ^
+      153 |       res.status(500).send(templates.tokenExchangeError(exchangeError));
+      154 |     }
+      155 |   });
+
+      at error (auth/oauth-server.js:152:15)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+    console.error
+      Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.
+
+      69 |
+      70 |   if (!(tokenStorage instanceof TokenStorage)) {
+    > 71 |     console.error("Error: tokenStorage is not an instance of TokenStorage. OAuth routes will not function correctly.");
+         |             ^
+      72 |     // Optionally, you could throw an error here or disable the routes
+      73 |     // throw new Error("Invalid tokenStorage provided to setupOAuthRoutes");
+      74 |   }
+
+      at error (auth/oauth-server.js:71:13)
+      at Object.setupOAuthRoutes (test/auth/oauth-server.test.js:34:5)
+
+
+Test Suites: 28 passed, 28 total
+Tests:       305 passed, 305 total
+Snapshots:   0 total
+Time:        0.461 s, estimated 1 s
+Ran all test suites.
