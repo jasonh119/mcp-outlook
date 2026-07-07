@@ -25,11 +25,13 @@ describe('handleListEvents', () => {
       expect(callGraphAPI).toHaveBeenCalledWith(
         MOCK_ACCESS_TOKEN,
         'GET',
-        'me/events',
+        'me/calendarView',
         null,
         expect.objectContaining({
           $top: 10,
-          $orderby: 'start/dateTime'
+          $orderby: 'start/dateTime',
+          startDateTime: expect.any(String),
+          endDateTime: expect.any(String)
         })
       );
       expect(result.content[0].text).toContain('Found 1 events');
@@ -45,7 +47,7 @@ describe('handleListEvents', () => {
       expect(callGraphAPI).toHaveBeenCalledWith(
         MOCK_ACCESS_TOKEN,
         'GET',
-        'me/events',
+        'me/calendarView',
         null,
         expect.objectContaining({ $top: 5 })
       );
@@ -60,7 +62,7 @@ describe('handleListEvents', () => {
       expect(callGraphAPI).toHaveBeenCalledWith(
         MOCK_ACCESS_TOKEN,
         'GET',
-        'me/events',
+        'me/calendarView',
         null,
         expect.objectContaining({ $top: 50 })
       );
